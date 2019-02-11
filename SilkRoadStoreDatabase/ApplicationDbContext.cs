@@ -14,9 +14,6 @@ namespace TheSilkRoadStore.Database
             : base(options) { }
 
         public DbSet<Product> Products { get; set; } 
-        {
-
-        }
         
     }
 }
