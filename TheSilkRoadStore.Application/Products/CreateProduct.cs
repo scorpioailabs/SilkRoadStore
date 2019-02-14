@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading.Tasks;
 using TheSilkRoadStore.Database;
 using TheSilkRoadStore.Domain.Models;
 
@@ -14,14 +15,16 @@ namespace TheSilkRoadStore.Application.Products
             _context = context;
         }
 
-        public void Do(int Id, string Name, string Description)
+        public async Task Do(string Name, string Description, decimal Value)
         {
             _context.Products.Add(new Product
             {
-                Id = Id,
                 Name = Name,
-                Description = Description
+                Description = Description,
+                Value = Value
             });
+
+            await _context.SaveChangesAsync();
         }
         
 
