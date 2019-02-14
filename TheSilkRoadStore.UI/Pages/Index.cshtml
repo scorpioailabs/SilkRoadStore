@@ -14,3 +14,14 @@
         <input type="submit" value="Save Product" />
     </form>
 </div>
+
+<div>
+    @{ 
+        foreach(var p in Model.Products)
+        {
+            <p>
+                @p.Name - @p.Description - @p.Value
+            </p>
+        }
+    }
+</div>

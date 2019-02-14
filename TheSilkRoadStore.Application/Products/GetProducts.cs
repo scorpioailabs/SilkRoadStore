@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using TheSilkRoadStore.Database;
 
-namespace TheSilkRoadStore.Application.Products
+namespace TheSilkRoadStore.Application.GetProducts
 {
     public class GetProducts
     {
@@ -15,9 +15,20 @@ namespace TheSilkRoadStore.Application.Products
             _ctx = ctx;
         }
 
-        public void Do()
-        {
-            _ctx.Products.ToList();
-        }
+        public IEnumerable<ProductViewModel> Do() =>
+            _ctx.Products.ToList().Select(x => new ProductViewModel
+            {
+                Name = x.Name,
+                Description = x.Description,
+                Value = $"£ {x.Value.ToString("N2")}",  //1010.50 =1,010.50 => £1,010.50)
+            });
     }
+
+    public class ProductViewModel
+    {
+        public string Name { get; set; }
+        public string Description { get; set; }
+        public string Value { get; set; }
+    }
+
 }

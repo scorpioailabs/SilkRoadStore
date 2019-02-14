@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using TheSilkRoadStore.Database;
 using TheSilkRoadStore.Domain.Models;
 
-namespace TheSilkRoadStore.Application.Products
+namespace TheSilkRoadStore.Application.CreateProducts 
 {
     public class CreateProduct
     {
