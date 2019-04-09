@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheSilkRoadStore.Domain", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheSilkRoadStore.Application", "TheSilkRoadStore.Application\TheSilkRoadStore.Application.csproj", "{729F9D04-52DD-40C5-96FF-AF849A7BD7A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheSilkRoadStore.Database", "SilkRoadStoreDatabase\TheSilkRoadStore.Database.csproj", "{8616EB76-5E5B-4480-B484-B5AEB13B40CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TheSilkRoadStore.Database", "SilkRoadStoreDatabase\TheSilkRoadStore.Database.csproj", "{8616EB76-5E5B-4480-B484-B5AEB13B40CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -4,18 +4,6 @@
     ViewData["Title"] = "Home page";
 }
 <div>
-    <form method="post">
-        <label>Name</label>
-        <input asp-for="Product.Name" />
-        <label>Description</label>
-        <input asp-for="Product.Description" />
-        <label>Value</label>
-        <input asp-for="Product.Value" />
-        <input type="submit" value="Save Product" />
-    </form>
-</div>
-
-<div>
     @{ 
         foreach(var p in Model.Products)
         {

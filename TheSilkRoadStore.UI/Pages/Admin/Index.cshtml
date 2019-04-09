@@ -1,0 +1,19 @@
+﻿@page
+@model IndexModel
+@{
+}
+
+<div id="app">
+
+    <input type="number" v-model="price" />
+    <p>
+        {{price}}
+    </p>
+
+</div>
+
+
+@section scripts{
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
+    <script src="~/js/admin/main.js"></script>
+}
