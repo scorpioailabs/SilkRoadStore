@@ -18,8 +18,8 @@ namespace TheSilkRoadStore.Application.ProductsAdmin
 
         public async Task<bool> Do(int id)
         {
-            var Product = _context.Products.FirstOrDefault(x => x.Id == id);
-            _context.Products.Remove(Product);
+            var product = _context.Products.FirstOrDefault(x => x.Id == id);
+            _context.Products.Remove(product);
             await _context.SaveChangesAsync();
             return true;
         }

@@ -22,8 +22,8 @@ namespace TheSilkRoadStore.Application.ProductsAdmin
                 Name = x.Name,
                 Description = x.Description,
                 Value = x.Value,
-            }).FirstOrDefault()
-            ;
+            })
+            .FirstOrDefault();
 
         public class ProductViewModel
         {

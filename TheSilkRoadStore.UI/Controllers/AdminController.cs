@@ -21,7 +21,7 @@ namespace TheSilkRoadStore.UI.Controllers
         public IActionResult GetProducts() => Ok(new GetProducts(_ctx).Do());
 
         [HttpGet("products/{id}")]
-        public IActionResult GetProduct(int id) => Ok(new GetProducts(_ctx).Do());
+        public IActionResult GetProduct(int id) => Ok(new GetProduct(_ctx).Do(id));
 
         [HttpPost("products")]
         public async Task<IActionResult> CreateProduct([FromBody] CreateProduct.Request request) => Ok((await new CreateProduct(_ctx).Do(request)));

@@ -19,15 +19,13 @@ namespace TheSilkRoadStore.Application.ProductsAdmin
             _ctx.Products.ToList().Select(x => new ProductViewModel
             {
                 Id = x.Id,
-                Name = x.Name,
-                Description = x.Description,
+                Name = x.Name,              
                 Value =x.Value,  //1010.50 =1,010.50 => £1,010.50)
             });
         public class ProductViewModel
         {
             public int Id { get; set; } 
             public string Name { get; set; }
-            public string Description { get; set; }
             public decimal Value { get; set; }
         }
     }
