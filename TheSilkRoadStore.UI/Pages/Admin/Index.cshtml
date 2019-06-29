@@ -2,30 +2,56 @@
 @model IndexModel
 @{
 }
-
-<div id="app" class="container">
-    <div class="columns">
-        <div class="column is-3">
-            <div class="menu">
-                <p class="menu-label">
-                    Admin Menu
-                </p>
-                <ul class="menu-list">
-                    <li><a>Products</a></li>
-                    <li><a>Orders</a></li>
-                    <li><a>Stock</a></li>
-                </ul>
-            </div>
+    <div id="app" class="container">
+        <div v-if="!editing">
+            <button class="button" @@click="newProduct">Add New Product</button>
+            <table class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>Product</th>
+                    <th>Value</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tr v-for="(product, index) in products">
+                    <td>{{product.id}}</td>
+                    <td>{{product.name}}</td>
+                    <td>{{product.value}}</td>
+                    <td><a @@click="editProduct(product.id, index)">Edit</a></td>
+                    <td><a @@click="deleteProduct(product.id, index)">Remove</a></td>
+                </tr>
+            </table>
         </div>
-        <div class="column is-9">
-            <product-manager></product-manager>
+
+        <div v-else>
+            <label class="label">Product Name</label>
+            <div class="field">
+                <div class="control">
+                    <input class="input" v-model="productModel.name" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Product Description</label>
+                <div class="control">
+                    <input class="input" v-model="productModel.description" />
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Value</label>
+                <div class="control">
+                    <input class="input" v-model="productModel.value" />
+                </div>
+            </div>
+            <button class="button is-success" @@click="createProduct" v-if="!productModel.id">Create Product</button>
+            <button class="button is-warning" @@click="updateProduct" v-else>Update Product</button>
+            <button class="button is-danger" @@click="cancel">Cancel</button>
         </div>
     </div>
-</div>
 
 @section scripts{
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="~/js/admin/product-component.js"></script>
-    <script src="~/js/admin/main.js"></script>
+    <script src="~/js/admin/products.js"></script>
 }
